@@ -1,0 +1,199 @@
+{% extends "base.html" %}
+
+{% block title %}SmartMeasure AI{% endblock %}
+
+{% block content %}
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="#">
+            📏 SmartMeasure AI
+        </a>
+
+        <button class="navbar-toggler"
+                data-bs-toggle="collapse"
+                data-bs-target="#navMenu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#features">Features</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#stats">Statistics</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="overlay"></div>
+
+    <div class="container hero-content">
+
+        <h1>SmartMeasure AI</h1>
+
+        <h3>AI Powered 3D Object Measurement</h3>
+
+        <p>
+
+            Measure real-world objects accurately using
+            Artificial Intelligence,
+            YOLOv8,
+            Computer Vision,
+            and ArUco Markers.
+
+        </p>
+
+        <a href="/login" class="btn btn-primary btn-lg">
+
+            Get Started
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section id="features" class="features">
+
+<div class="container">
+
+<h2 class="section-title">
+
+Why Choose SmartMeasure?
+
+</h2>
+
+<div class="row">
+
+<div class="col-md-4">
+
+<div class="feature-card">
+
+<h3>🤖 AI Powered</h3>
+
+<p>
+
+Detect objects instantly using YOLOv8.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="feature-card">
+
+<h3>📏 Accurate</h3>
+
+<p>
+
+Measure dimensions using Computer Vision.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="feature-card">
+
+<h3>⚡ Fast</h3>
+
+<p>
+
+Real-time processing with live camera.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- STATS -->
+
+<section id="stats" class="stats">
+
+<div class="container">
+
+<div class="row text-center">
+
+<div class="col-md-4">
+
+<h1>98%</h1>
+
+<p>Detection Accuracy</p>
+
+</div>
+
+<div class="col-md-4">
+
+<h1>0.3s</h1>
+
+<p>Average Detection Time</p>
+
+</div>
+
+<div class="col-md-4">
+
+<h1>24/7</h1>
+
+<p>AI Ready</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+
+© 2026 SmartMeasure AI
+
+</p>
+
+</footer>
+
+{% endblock %}

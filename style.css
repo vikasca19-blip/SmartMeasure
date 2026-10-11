@@ -1,0 +1,233 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    background:#0F172A;
+    color:white;
+    overflow-x:hidden;
+
+}
+
+.hero{
+
+    height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    position:relative;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #0F172A,
+        #1E293B
+    );
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    background:
+
+    radial-gradient(
+
+    circle,
+
+    rgba(59,130,246,.15),
+
+    transparent 70%
+
+    );
+
+    animation: pulse 6s infinite;
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.hero h1{
+
+    font-size:70px;
+
+    font-weight:700;
+
+    color:#3B82F6;
+
+}
+
+.hero h3{
+
+    margin-top:20px;
+
+    color:#CBD5E1;
+
+}
+
+.hero p{
+
+    width:70%;
+
+    margin:auto;
+
+    margin-top:25px;
+
+    font-size:20px;
+
+    color:#94A3B8;
+
+}
+
+.btn-primary{
+
+    margin-top:40px;
+
+    padding:15px 45px;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:20px;
+
+    background:#2563EB;
+
+    transition:.3s;
+
+}
+
+.btn-primary:hover{
+
+    transform:scale(1.08);
+
+    background:#3B82F6;
+
+}
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.1);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+.navbar{
+
+background:rgba(10,20,40,.85);
+
+backdrop-filter:blur(12px);
+
+}
+
+.features{
+
+padding:90px 0;
+
+background:#111827;
+
+}
+
+.section-title{
+
+text-align:center;
+
+margin-bottom:60px;
+
+font-weight:bold;
+
+}
+
+.feature-card{
+
+background:#1E293B;
+
+padding:35px;
+
+border-radius:18px;
+
+transition:.3s;
+
+text-align:center;
+
+height:100%;
+
+}
+
+.feature-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 10px 30px rgba(59,130,246,.35);
+
+}
+
+.stats{
+
+padding:80px;
+
+background:#0F172A;
+
+}
+
+.stats h1{
+
+font-size:60px;
+
+color:#3B82F6;
+
+}
+
+footer{
+
+padding:30px;
+
+background:#111827;
+
+text-align:center;
+
+color:#CBD5E1;
+
+}
+

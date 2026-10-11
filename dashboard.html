@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | SmartMeasure AI{% endblock %}
+
+{% block content %}
+
+<section class="dashboard">
+
+    <!-- Welcome -->
+
+    <div class="welcome">
+
+        <h1>SmartMeasure AI Dashboard</h1>
+
+        <p>
+            Professional AI-powered measurement platform for precise
+            object detection, 2D measurement, 3D scanning and wall
+            height estimation.
+        </p>
+
+    </div>
+
+    <!-- Statistics -->
+
+    <div class="stats">
+
+        <div class="stat-card">
+
+            <h2>AI Status</h2>
+
+            <span class="online">🟢 Online</span>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2>Camera</h2>
+
+            <span class="online">🟢 Connected</span>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2>Accuracy</h2>
+
+            <h3>98.7%</h3>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h2>Measurements</h2>
+
+            <h3>128</h3>
+
+        </div>
+
+    </div>
+
+    <!-- Measurement Tools -->
+
+    <h2 class="section-title">
+
+        Measurement Tools
+
+    </h2>
+
+    <div class="cards">
+
+        <!-- AI Object Detector -->
+
+        <a href="/measure?mode=ai" class="card">
+
+            <div class="icon">🤖</div>
+
+            <h2>AI Object Detector</h2>
+
+            <p>
+                Detect and identify real-world objects using YOLOv8 with
+                AI recognition and confidence estimation.
+            </p>
+
+        </a>
+
+        <!-- 2D Precision -->
+
+        <a href="/measure?mode=2d" class="card">
+
+            <div class="icon">📏</div>
+
+            <h2>2D Precision Measure</h2>
+
+            <p>
+                Measure real-world objects by selecting start and end
+                points similar to Apple's Measure application.
+            </p>
+
+        </a>
+
+        <!-- 3D Scanner -->
+
+        <a href="/measure?mode=3d" class="card">
+
+            <div class="icon">📦</div>
+
+            <h2>3D Object Scanner</h2>
+
+            <p>
+                Estimate width, height, depth and volume using AI-based
+                object analysis.
+            </p>
+
+        </a>
+
+        <!-- Wall Height Scanner -->
+
+        <a href="/measure?mode=wall" class="card">
+
+            <div class="icon">🏢</div>
+
+            <h2>Wall Height Scanner</h2>
+
+            <p>
+                Measure wall height using intelligent edge detection,
+                A4 reference calibration and a professional HUD.
+            </p>
+
+        </a>
+
+    </div>
+
+    <!-- Accessories -->
+
+    <h2 class="section-title mt-5">
+
+        Other Accessories
+
+    </h2>
+
+    <div class="cards">
+
+        <!-- History -->
+
+        <a href="/history" class="card">
+
+            <div class="icon">📜</div>
+
+            <h2>History</h2>
+
+            <p>
+                View previous measurements and generated PDF reports.
+            </p>
+
+        </a>
+
+        <!-- Settings -->
+
+        <a href="/settings" class="card">
+
+            <div class="icon">⚙️</div>
+
+            <h2>Settings</h2>
+
+            <p>
+                Configure camera, measurement units and application
+                preferences.
+            </p>
+
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,334 @@
+.dashboard{
+    padding:120px 8% 80px;
+    min-height:100vh;
+    background:
+        radial-gradient(circle at top right,#1E3A8A22 0%,transparent 35%),
+        radial-gradient(circle at bottom left,#2563EB22 0%,transparent 40%),
+        #0F172A;
+}
+
+/* ---------------- WELCOME ---------------- */
+
+.dashboard .welcome{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.dashboard .welcome h1{
+    font-size:52px;
+    font-weight:700;
+    color:#fff;
+    margin-bottom:18px;
+}
+
+.dashboard .welcome p{
+    max-width:750px;
+    margin:auto;
+    color:#AAB7D1;
+    font-size:18px;
+    line-height:1.8;
+}
+
+/* ---------------- STATS ---------------- */
+
+.dashboard .stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    margin:60px 0;
+}
+
+.dashboard .stat-card{
+
+    background:rgba(30,41,59,.70);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(59,130,246,.20);
+
+    border-radius:22px;
+
+    padding:35px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.30);
+
+}
+
+.dashboard .stat-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#3B82F6;
+
+    box-shadow:
+        0 20px 45px rgba(59,130,246,.25),
+        0 0 25px rgba(59,130,246,.18);
+
+}
+
+.dashboard .stat-card h2{
+
+    color:#E5E7EB;
+
+    margin-bottom:15px;
+
+    font-size:20px;
+
+}
+
+.dashboard .stat-card h3{
+
+    color:#3B82F6;
+
+    font-size:42px;
+
+    font-weight:700;
+
+}
+
+.dashboard .online{
+
+    color:#22C55E;
+
+    font-weight:700;
+
+    font-size:20px;
+
+}
+
+/* ---------------- TITLES ---------------- */
+
+.dashboard .section-title{
+
+    text-align:center;
+
+    color:white;
+
+    font-size:38px;
+
+    margin:70px 0 45px;
+
+    font-weight:700;
+
+}
+
+/* ---------------- CARDS ---------------- */
+
+.dashboard .cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:28px;
+
+}
+
+.dashboard .card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    min-height:260px;
+
+    text-decoration:none;
+
+    background:rgba(30,41,59,.72);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(59,130,246,.18);
+
+    border-radius:22px;
+
+    padding:35px;
+
+    transition:.35s;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.30);
+
+}
+
+/* glowing line */
+
+.dashboard .card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:120%;
+
+    height:3px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #60A5FA,
+        transparent
+    );
+
+    transition:.7s;
+
+}
+
+.dashboard .card:hover::before{
+
+    left:100%;
+
+}
+
+.dashboard .card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:#3B82F6;
+
+    box-shadow:
+        0 20px 45px rgba(37,99,235,.25),
+        0 0 30px rgba(37,99,235,.20);
+
+}
+
+.dashboard .icon{
+
+    font-size:58px;
+
+    margin-bottom:22px;
+
+}
+
+.dashboard .card h2{
+
+    color:white;
+
+    margin-bottom:18px;
+
+    font-size:24px;
+
+}
+
+.dashboard .card p{
+
+    color:#B8C2D9;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+}
+
+/* ---------------- BUTTONS ---------------- */
+
+.btn{
+
+    padding:14px 30px;
+
+    border:none;
+
+    border-radius:12px;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.btn-primary{
+
+    background:#2563EB;
+
+}
+
+.btn-success{
+
+    background:#16A34A;
+
+}
+
+.btn-danger{
+
+    background:#DC2626;
+
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media(max-width:992px){
+
+.dashboard .stats{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.dashboard{
+
+padding:110px 20px 60px;
+
+}
+
+.dashboard .welcome h1{
+
+font-size:38px;
+
+}
+
+.dashboard .welcome p{
+
+font-size:16px;
+
+}
+
+.dashboard .section-title{
+
+font-size:30px;
+
+}
+
+.dashboard .stats{
+
+grid-template-columns:1fr;
+
+}
+
+.dashboard .cards{
+
+grid-template-columns:1fr;
+
+}
+
+.dashboard .card{
+
+min-height:auto;
+
+}
+
+}

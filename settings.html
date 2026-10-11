@@ -1,0 +1,319 @@
+{% extends "base.html" %}
+
+{% block title %}Settings | SmartMeasure AI{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4 mb-5">
+
+    <h2 class="mb-4">
+        ⚙️ SmartMeasure Settings
+    </h2>
+
+    <div class="card p-4 shadow">
+
+        <!-- Performance & AI Processing Speed -->
+
+        <h4>⚡ Performance & Stream Mode</h4>
+
+        <hr>
+
+        <div class="mb-3">
+            <label class="form-label">
+                <strong>AI Processing Mode</strong>
+            </label>
+            <div class="btn-group w-100" role="group" aria-label="Performance Mode">
+                <input type="radio" class="btn-check" name="presetMode" id="presetFast" value="fast" checked>
+                <label class="btn btn-outline-success" for="presetFast">🟢 Smooth / Fast</label>
+
+                <input type="radio" class="btn-check" name="presetMode" id="presetBalanced" value="balanced">
+                <label class="btn btn-outline-warning" for="presetBalanced">🟡 Balanced</label>
+
+                <input type="radio" class="btn-check" name="presetMode" id="presetPrecision" value="precision">
+                <label class="btn btn-outline-danger" for="presetPrecision">🔴 Precision</label>
+            </div>
+            <small class="text-muted d-block mt-1">
+                "Smooth / Fast" optimizes stream rate for webcams and lower-spec machines.
+            </small>
+        </div>
+
+        <div class="mb-3">
+            <label for="qualityRange" class="form-label d-flex justify-content-between">
+                <strong>Stream Compression Quality</strong>
+                <span id="qualityVal" class="text-info fw-bold">70% Quality</span>
+            </label>
+            <input type="range" class="form-range" min="40" max="95" step="5" id="qualityRange" value="70">
+        </div>
+
+        <hr>
+
+        <!-- Visual Overlays -->
+
+        <h4>🎨 Visual Overlays</h4>
+
+        <hr>
+
+        <div class="form-check form-switch mb-3">
+            <input class="form-check-input" type="checkbox" id="toggleMesh" checked>
+            <label class="form-check-label fw-bold" for="toggleMesh">
+                Enable 3D Laser Mesh Overlay
+            </label>
+            <small class="d-block text-muted">Renders cyan wireframe gridlines & scanning laser beam in 3D mode.</small>
+        </div>
+
+        <div class="form-check form-switch mb-3">
+            <input class="form-check-input" type="checkbox" id="toggleGlow" checked>
+            <label class="form-check-label fw-bold" for="toggleGlow">
+                Enable Contour Glow Bloom
+            </label>
+            <small class="d-block text-muted">Renders neon glowing outlines around detected objects.</small>
+        </div>
+
+        <hr>
+
+        <!-- Camera Info -->
+
+        <h4>📷 Camera</h4>
+
+        <hr>
+
+        <p>
+            <strong>Status :</strong>
+            <span class="text-success">🟢 Connected</span>
+        </p>
+
+        <p>
+            <strong>Camera Source :</strong>
+            Camo Studio (iPhone Camera)
+        </p>
+
+        <hr>
+
+        <!-- AI Configuration -->
+
+        <h4>🤖 AI Configuration</h4>
+
+        <hr>
+
+        <p>
+            <strong>Model :</strong>
+            YOLOv8 Nano
+        </p>
+
+        <div class="mb-3">
+
+            <label class="form-label">
+
+                <strong>Measurement Unit</strong>
+
+            </label>
+
+            <select
+                id="unitSelect"
+                class="form-select">
+
+                <option value="cm" selected>
+                    Centimeters (cm)
+                </option>
+
+                <option value="mm">
+                    Millimeters (mm)
+                </option>
+
+                <option value="m">
+                    Meters (m)
+                </option>
+
+            </select>
+
+        </div>
+
+        <p>
+            <strong>3D Measurement :</strong>
+            Enabled
+        </p>
+
+        <hr>
+
+        <!-- Appearance -->
+
+        <h4>🎨 Appearance</h4>
+
+        <hr>
+
+        <div class="mb-3">
+
+            <label class="form-label">
+
+                <strong>Theme</strong>
+
+            </label>
+
+            <select
+                id="themeSelect"
+                class="form-select">
+
+                <option value="dark" selected>
+                    🌙 Dark
+                </option>
+
+                <option value="light">
+                    ☀️ Light
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">
+
+                <strong>Accent Color</strong>
+
+            </label>
+
+            <select
+                id="accentSelect"
+                class="form-select">
+
+                <option value="blue" selected>
+                    🔵 Blue
+                </option>
+
+                <option value="green">
+                    🟢 Green
+                </option>
+
+                <option value="purple">
+                    🟣 Purple
+                </option>
+
+            </select>
+
+        </div>
+
+        <!-- Save Button -->
+
+        <div>
+            <button
+                id="saveSettings"
+                class="btn btn-success mt-3"
+                onclick="saveSettingsPage()">
+
+                💾 Save Settings
+
+            </button>
+
+            <span
+                id="saveMessage"
+                class="ms-3 text-success fw-bold"
+                style="display:none;">
+
+                ✅ Settings Saved Successfully
+
+            </span>
+        </div>
+
+        <hr>
+
+        <!-- Application -->
+
+        <h4>📱 Application</h4>
+
+        <hr>
+
+        <p>
+            <strong>Version :</strong>
+            SmartMeasure AI v1.0
+        </p>
+
+        <p>
+            <strong>Platform :</strong>
+            Python + Flask + OpenCV
+        </p>
+
+        <p>
+            <strong>Object Detection :</strong>
+            Ultralytics YOLOv8
+        </p>
+
+        <hr>
+
+        <!-- Developer -->
+
+        <h4>🎓 Developer</h4>
+
+        <hr>
+
+        <p>
+            Developed as a Final Year Computer Science Engineering Project.
+        </p>
+
+        <a
+            href="/measure"
+            class="btn btn-primary mt-3">
+
+            ⬅ Back to Camera
+        </a>
+
+    </div>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const qualityRange = document.getElementById("qualityRange");
+    if (qualityRange) {
+        qualityRange.addEventListener("input", function () {
+            document.getElementById("qualityVal").innerText = this.value + "% Quality";
+        });
+    }
+
+    // Fetch existing settings from Flask backend on page load
+    fetch("/api/settings")
+        .then(res => res.json())
+        .then(settings => {
+            if (settings.preset === "fast") document.getElementById("presetFast").checked = true;
+            else if (settings.preset === "balanced") document.getElementById("presetBalanced").checked = true;
+            else if (settings.preset === "precision") document.getElementById("presetPrecision").checked = true;
+
+            if (document.getElementById("qualityRange")) {
+                document.getElementById("qualityRange").value = settings.jpeg_quality;
+                document.getElementById("qualityVal").innerText = settings.jpeg_quality + "% Quality";
+            }
+
+            if (document.getElementById("toggleMesh")) document.getElementById("toggleMesh").checked = settings.enable_mesh;
+            if (document.getElementById("toggleGlow")) document.getElementById("toggleGlow").checked = settings.enable_glow;
+        })
+        .catch(err => console.error("Could not load camera settings:", err));
+});
+
+function saveSettingsPage() {
+    const selectedPreset = document.querySelector('input[name="presetMode"]:checked')?.value || "fast";
+
+    const settings = {
+        preset: selectedPreset,
+        jpeg_quality: document.getElementById("qualityRange").value,
+        enable_mesh: document.getElementById("toggleMesh").checked,
+        enable_glow: document.getElementById("toggleGlow").checked
+    };
+
+    fetch("/api/settings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(settings)
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            const msg = document.getElementById("saveMessage");
+            msg.style.display = "inline-block";
+            setTimeout(() => { msg.style.display = "none"; }, 3000);
+        }
+    })
+    .catch(err => console.error("Error saving settings:", err));
+}
+</script>
+
+{% endblock %}
